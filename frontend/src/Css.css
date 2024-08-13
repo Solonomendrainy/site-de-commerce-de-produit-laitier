@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+/* CSS pour le soulignement lors du survol */
+.navbar .nav-link {
+  position: relative;
+  text-decoration: none;
+  color: black; /* Couleur du texte */
+  padding-bottom: 5px; /* Espace entre le texte et la bordure */
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px; /* Épaisseur du soulignement */
+  width: 0; /* Largeur initiale */
+  background-color: black; /* Couleur du soulignement */
+  transition: width 0.3s ease; /* Animation du soulignement */
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%; /* Agrandir le soulignement lors du survol */
+}
+
+/* CSS pour le soulignement permanent du menu sélectionné */
+.navbar .nav-item.active .nav-link::after {
+  width: 100%; /* Soulignement permanent pour le menu sélectionné */
+}
